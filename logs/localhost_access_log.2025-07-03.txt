@@ -5,3 +5,7 @@
 0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:11:57 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 4046
 0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:12:15 +0530] "POST /PahanaEdu/login HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:12:15 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 4046
+0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:30:49 +0530] "GET /PahanaEdu HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:30:50 +0530] "GET /PahanaEdu/ HTTP/1.1" 200 10376
+0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:30:52 +0530] "POST /PahanaEdu/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Jul/2025:15:30:53 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 4046
