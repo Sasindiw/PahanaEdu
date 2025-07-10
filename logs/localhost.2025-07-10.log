@@ -1,0 +1,287 @@
+10-Jul-2025 16:07:54.454 SEVERE [http-nio-8082-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/PahanaEdu] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [235] in the jsp file: [/dashboard.jsp]
+totalCustomers cannot be resolved to a variable
+232:             <div class="card-stat" style="background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); color: #fff;">
+233:                 <div class="stat-icon"><i class="fa fa-users"></i></div>
+234:                 <div class="stat-title">Total Customers</div>
+235:                 <div class="stat-value"><!-- <%= totalCustomers %> --> 120</div>
+236:             </div>
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+
+
+An error occurred at line: [240] in the jsp file: [/dashboard.jsp]
+billsGenerated cannot be resolved to a variable
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+239:                 <div class="stat-title">Bills Generated</div>
+240:                 <div class="stat-value"><!-- <%= billsGenerated %> --> 350</div>
+241:             </div>
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+
+
+An error occurred at line: [245] in the jsp file: [/dashboard.jsp]
+itemsManaged cannot be resolved to a variable
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+244:                 <div class="stat-title">Items Managed</div>
+245:                 <div class="stat-value"><!-- <%= itemsManaged %> --> 58</div>
+246:             </div>
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+
+
+An error occurred at line: [250] in the jsp file: [/dashboard.jsp]
+newCustomers cannot be resolved to a variable
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+249:                 <div class="stat-title">New Customers (This Month)</div>
+250:                 <div class="stat-value"><!-- <%= newCustomers %> --> 12</div>
+251:             </div>
+252:         </div>
+253:         <div class="dashboard-welcome mb-4">
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [235] in the jsp file: [/dashboard.jsp]
+totalCustomers cannot be resolved to a variable
+232:             <div class="card-stat" style="background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); color: #fff;">
+233:                 <div class="stat-icon"><i class="fa fa-users"></i></div>
+234:                 <div class="stat-title">Total Customers</div>
+235:                 <div class="stat-value"><!-- <%= totalCustomers %> --> 120</div>
+236:             </div>
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+
+
+An error occurred at line: [240] in the jsp file: [/dashboard.jsp]
+billsGenerated cannot be resolved to a variable
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+239:                 <div class="stat-title">Bills Generated</div>
+240:                 <div class="stat-value"><!-- <%= billsGenerated %> --> 350</div>
+241:             </div>
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+
+
+An error occurred at line: [245] in the jsp file: [/dashboard.jsp]
+itemsManaged cannot be resolved to a variable
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+244:                 <div class="stat-title">Items Managed</div>
+245:                 <div class="stat-value"><!-- <%= itemsManaged %> --> 58</div>
+246:             </div>
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+
+
+An error occurred at line: [250] in the jsp file: [/dashboard.jsp]
+newCustomers cannot be resolved to a variable
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+249:                 <div class="stat-title">New Customers (This Month)</div>
+250:                 <div class="stat-value"><!-- <%= newCustomers %> --> 12</div>
+251:             </div>
+252:         </div>
+253:         <div class="dashboard-welcome mb-4">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+10-Jul-2025 16:07:57.036 SEVERE [http-nio-8082-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/PahanaEdu] threw exception [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.dashboard_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.dashboard_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:119)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:56)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:174)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:393)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+10-Jul-2025 16:08:28.796 SEVERE [http-nio-8082-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/PahanaEdu] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [235] in the jsp file: [/dashboard.jsp]
+totalCustomers cannot be resolved to a variable
+232:             <div class="card-stat" style="background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); color: #fff;">
+233:                 <div class="stat-icon"><i class="fa fa-users"></i></div>
+234:                 <div class="stat-title">Total Customers</div>
+235:                 <div class="stat-value"><!-- <%= totalCustomers %> --> 120</div>
+236:             </div>
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+
+
+An error occurred at line: [240] in the jsp file: [/dashboard.jsp]
+billsGenerated cannot be resolved to a variable
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+239:                 <div class="stat-title">Bills Generated</div>
+240:                 <div class="stat-value"><!-- <%= billsGenerated %> --> 350</div>
+241:             </div>
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+
+
+An error occurred at line: [245] in the jsp file: [/dashboard.jsp]
+itemsManaged cannot be resolved to a variable
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+244:                 <div class="stat-title">Items Managed</div>
+245:                 <div class="stat-value"><!-- <%= itemsManaged %> --> 58</div>
+246:             </div>
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+
+
+An error occurred at line: [250] in the jsp file: [/dashboard.jsp]
+newCustomers cannot be resolved to a variable
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+249:                 <div class="stat-title">New Customers (This Month)</div>
+250:                 <div class="stat-value"><!-- <%= newCustomers %> --> 12</div>
+251:             </div>
+252:         </div>
+253:         <div class="dashboard-welcome mb-4">
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [235] in the jsp file: [/dashboard.jsp]
+totalCustomers cannot be resolved to a variable
+232:             <div class="card-stat" style="background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); color: #fff;">
+233:                 <div class="stat-icon"><i class="fa fa-users"></i></div>
+234:                 <div class="stat-title">Total Customers</div>
+235:                 <div class="stat-value"><!-- <%= totalCustomers %> --> 120</div>
+236:             </div>
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+
+
+An error occurred at line: [240] in the jsp file: [/dashboard.jsp]
+billsGenerated cannot be resolved to a variable
+237:             <div class="card-stat" style="background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);">
+238:                 <div class="stat-icon"><i class="fa fa-file-invoice"></i></div>
+239:                 <div class="stat-title">Bills Generated</div>
+240:                 <div class="stat-value"><!-- <%= billsGenerated %> --> 350</div>
+241:             </div>
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+
+
+An error occurred at line: [245] in the jsp file: [/dashboard.jsp]
+itemsManaged cannot be resolved to a variable
+242:             <div class="card-stat" style="background: linear-gradient(120deg, #fc5c7d 0%, #6a82fb 100%); color: #fff;">
+243:                 <div class="stat-icon"><i class="fa fa-box"></i></div>
+244:                 <div class="stat-title">Items Managed</div>
+245:                 <div class="stat-value"><!-- <%= itemsManaged %> --> 58</div>
+246:             </div>
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+
+
+An error occurred at line: [250] in the jsp file: [/dashboard.jsp]
+newCustomers cannot be resolved to a variable
+247:             <div class="card-stat" style="background: linear-gradient(120deg, #11998e 0%, #38ef7d 100%); color: #fff;">
+248:                 <div class="stat-icon"><i class="fa fa-user-plus"></i></div>
+249:                 <div class="stat-title">New Customers (This Month)</div>
+250:                 <div class="stat-value"><!-- <%= newCustomers %> --> 12</div>
+251:             </div>
+252:         </div>
+253:         <div class="dashboard-welcome mb-4">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:573)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:344)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:330)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:591)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:379)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:356)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:307)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:656)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1826)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
