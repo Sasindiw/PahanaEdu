@@ -1,0 +1,549 @@
+08-Jul-2025 13:19:09.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 13:19:09.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 13:19:09.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 13:19:09.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 13:19:09.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 13:19:09.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 13:19:09.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 13:19:09.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 13:19:09.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 13:19:09.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 13:19:09.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 13:19:09.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 13:19:09.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 13:19:09.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 13:19:09.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 13:19:09.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 13:19:09.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 13:19:09.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 13:19:09.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 13:19:09.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 13:19:09.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 13:19:09.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=59176:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 13:19:09.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 13:19:09.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 13:19:09.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 13:19:10.089 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 13:19:10.983 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:19:11.022 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [2451] milliseconds
+08-Jul-2025 13:19:11.133 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 13:19:11.134 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 13:19:11.157 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 13:19:12.518 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 13:19:12.705 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,547] ms
+08-Jul-2025 13:19:12.715 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:19:12.786 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1760] milliseconds
+08-Jul-2025 13:39:59.772 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:39:59.924 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 13:40:00.358 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 13:40:00.572 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:40:00.605 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:49:43.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 13:49:43.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 13:49:43.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 13:49:43.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 13:49:43.924 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 13:49:43.925 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 13:49:43.925 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 13:49:43.925 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 13:49:43.926 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 13:49:43.926 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 13:49:43.926 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 13:49:43.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 13:49:43.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 13:49:43.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 13:49:43.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 13:49:43.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 13:49:43.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 13:49:43.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 13:49:43.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 13:49:43.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 13:49:43.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 13:49:43.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=50291:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 13:49:43.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 13:49:43.950 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 13:49:43.950 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 13:49:43.984 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 13:49:44.889 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:49:44.927 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1524] milliseconds
+08-Jul-2025 13:49:45.067 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 13:49:45.068 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 13:49:45.092 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 13:49:46.356 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 13:49:46.505 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,412] ms
+08-Jul-2025 13:49:46.514 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:49:46.565 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1634] milliseconds
+08-Jul-2025 13:50:12.418 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:50:12.431 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 13:50:12.449 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 13:50:12.462 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:50:12.482 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:57:32.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 13:57:32.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 13:57:32.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 13:57:32.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 13:57:32.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 13:57:32.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 13:57:32.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 13:57:32.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 13:57:32.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 13:57:32.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 13:57:32.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 13:57:32.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 13:57:32.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 13:57:32.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 13:57:32.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 13:57:32.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 13:57:32.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 13:57:32.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 13:57:32.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 13:57:32.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 13:57:32.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 13:57:32.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=50623:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 13:57:32.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 13:57:32.450 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 13:57:32.450 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 13:57:32.463 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 13:57:33.351 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:57:33.399 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1490] milliseconds
+08-Jul-2025 13:57:33.535 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 13:57:33.536 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 13:57:33.559 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 13:57:34.799 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 13:57:34.933 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,372] ms
+08-Jul-2025 13:57:34.939 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:57:34.988 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1585] milliseconds
+08-Jul-2025 13:58:14.179 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:58:14.182 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 13:58:14.210 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 13:58:14.228 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:58:14.246 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:59:31.709 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 13:59:31.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 13:59:31.725 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 13:59:31.726 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 13:59:31.726 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 13:59:31.726 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 13:59:31.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 13:59:31.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 13:59:31.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 13:59:31.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 13:59:31.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 13:59:31.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 13:59:31.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 13:59:31.758 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 13:59:31.758 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 13:59:31.758 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 13:59:31.759 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 13:59:31.759 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 13:59:31.759 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 13:59:31.760 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 13:59:31.760 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 13:59:31.760 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=50751:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 13:59:31.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 13:59:31.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 13:59:31.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 13:59:31.769 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 13:59:32.659 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:59:32.697 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1522] milliseconds
+08-Jul-2025 13:59:32.810 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 13:59:32.811 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 13:59:32.837 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 13:59:33.963 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 13:59:34.151 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,313] ms
+08-Jul-2025 13:59:34.161 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:59:34.251 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1551] milliseconds
+08-Jul-2025 13:59:54.339 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:59:54.349 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 13:59:54.376 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 13:59:54.389 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 13:59:54.398 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:13:22.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 14:13:22.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 14:13:22.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 14:13:22.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 14:13:22.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 14:13:22.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 14:13:22.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 14:13:22.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 14:13:22.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 14:13:22.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 14:13:22.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 14:13:22.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 14:13:22.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 14:13:22.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 14:13:22.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 14:13:22.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=51238:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 14:13:22.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 14:13:22.520 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 14:13:22.521 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 14:13:22.527 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 14:13:23.440 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:13:23.486 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1495] milliseconds
+08-Jul-2025 14:13:23.614 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 14:13:23.615 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 14:13:23.635 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 14:13:24.819 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 14:13:24.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,332] ms
+08-Jul-2025 14:13:24.975 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:13:25.031 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1542] milliseconds
+08-Jul-2025 14:44:49.204 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:44:49.229 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 14:44:49.389 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 14:44:49.475 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:44:49.497 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:45:11.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 14:45:11.235 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 14:45:11.235 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 14:45:11.235 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 14:45:11.235 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 14:45:11.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 14:45:11.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 14:45:11.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 14:45:11.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 14:45:11.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 14:45:11.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 14:45:11.255 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 14:45:11.256 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 14:45:11.256 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 14:45:11.256 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 14:45:11.256 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=53695:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 14:45:11.257 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 14:45:11.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 14:45:11.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 14:45:11.292 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 14:45:12.105 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:45:12.145 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1317] milliseconds
+08-Jul-2025 14:45:12.259 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 14:45:12.261 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 14:45:12.282 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 14:45:13.451 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 14:45:13.915 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,615] ms
+08-Jul-2025 14:45:13.922 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:45:13.969 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1819] milliseconds
+08-Jul-2025 14:48:08.461 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:48:08.472 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 14:48:08.491 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 14:48:08.509 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 14:48:08.521 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 15:52:18.376 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 15:52:18.389 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 15:52:18.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 15:52:18.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 15:52:18.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 15:52:18.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 15:52:18.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 15:52:18.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 15:52:18.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 15:52:18.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 15:52:18.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 15:52:18.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 15:52:18.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 15:52:18.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 15:52:18.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 15:52:18.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 15:52:18.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 15:52:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 15:52:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 15:52:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 15:52:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 15:52:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=54850:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 15:52:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 15:52:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 15:52:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 15:52:18.429 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 15:52:19.486 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 15:52:19.536 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1720] milliseconds
+08-Jul-2025 15:52:19.705 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 15:52:19.706 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 15:52:19.736 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 15:52:21.052 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 15:52:21.206 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,469] ms
+08-Jul-2025 15:52:21.214 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 15:52:21.264 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1724] milliseconds
+08-Jul-2025 15:56:18.651 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 15:56:18.651 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 15:56:18.672 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 15:56:18.687 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 15:56:18.704 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:29:53.454 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 16:29:53.462 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 16:29:53.462 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 16:29:53.463 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 16:29:53.463 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 16:29:53.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 16:29:53.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 16:29:53.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 16:29:53.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 16:29:53.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 16:29:53.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 16:29:53.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 16:29:53.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 16:29:53.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 16:29:53.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 16:29:53.483 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 16:29:53.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 16:29:53.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 16:29:53.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 16:29:53.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 16:29:53.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 16:29:53.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=55547:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 16:29:53.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 16:29:53.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 16:29:53.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 16:29:53.491 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 16:29:54.342 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:29:54.388 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1391] milliseconds
+08-Jul-2025 16:29:54.519 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 16:29:54.520 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 16:29:54.547 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 16:29:55.722 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 16:29:55.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,293] ms
+08-Jul-2025 16:29:55.851 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:29:55.901 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1508] milliseconds
+08-Jul-2025 16:30:31.289 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:30:31.304 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 16:30:31.328 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 16:30:31.341 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:30:31.355 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:36:07.577 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.106
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 5 2025 19:02:30 UTC
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.106.0
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\Sasindi\.jdks\openjdk-21.0.2
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\PahanaEdu
+08-Jul-2025 16:36:07.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-9.0.106
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-9.0.106
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\PahanaEdu
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\PahanaEdu\temp
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\PahanaEdu\conf\logging.properties
+08-Jul-2025 16:36:07.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jul-2025 16:36:07.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=55747:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin
+08-Jul-2025 16:36:07.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+08-Jul-2025 16:36:07.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+08-Jul-2025 16:36:07.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+08-Jul-2025 16:36:07.612 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The Apache Tomcat Native library failed to load. The error reported was [D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform]
+	java.lang.UnsatisfiedLinkError: D:\apache-tomcat-9.0.106\bin\tcnative-1.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+		at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+		at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:331)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:197)
+		at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:139)
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2418)
+		at java.base/java.lang.Runtime.load0(Runtime.java:852)
+		at java.base/java.lang.System.load(System.java:2025)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:49)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:269)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:212)
+		at org.apache.catalina.core.AprLifecycleListener.lifecycleEvent(AprLifecycleListener.java:143)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:121)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:690)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:713)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+08-Jul-2025 16:36:08.384 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:36:08.429 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1235] milliseconds
+08-Jul-2025 16:36:08.555 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jul-2025 16:36:08.556 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.106]
+08-Jul-2025 16:36:08.574 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml]
+08-Jul-2025 16:36:09.588 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jul-2025 16:36:09.707 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\PahanaEdu\conf\Catalina\localhost\PahanaEdu.xml] has finished in [1,133] ms
+08-Jul-2025 16:36:09.715 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:36:09.770 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1337] milliseconds
+08-Jul-2025 16:56:38.123 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:56:38.155 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jul-2025 16:56:38.340 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [PahanaEdu] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+08-Jul-2025 16:56:38.403 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+08-Jul-2025 16:56:38.435 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
