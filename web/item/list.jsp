@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.pahanaedu.model.Item" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Customer - Pahana Edu Bookshop</title>
+    <title>Item List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -18,7 +19,6 @@
         }
         body {
             background: var(--main-bg);
-            min-height: 100vh;
         }
         .sidebar {
             position: fixed;
@@ -80,52 +80,42 @@
             align-items: center;
             justify-content: flex-start;
         }
-        .form-container {
+        .container-custom {
             width: 100%;
-            max-width: 500px;
+            max-width: 900px;
             background: #fff;
             border-radius: 16px;
             box-shadow: 0 4px 18px rgba(0,0,0,0.08);
             padding: 32px 28px 24px 28px;
         }
-        .form-title {
+        h2 {
+            color: #1e293b;
             font-weight: bold;
-            color: var(--sidebar-bg);
-            margin-bottom: 24px;
-            text-align: center;
             letter-spacing: 1px;
         }
-        .form-label {
-            color: #334155;
-            font-weight: 500;
+        .table th {
+            background: #3b82f6;
+            color: #fff;
         }
-        .btn-primary {
-            background: var(--primary-btn);
+        .btn-secondary {
+            background: #1e293b;
             border: none;
         }
-        .btn-primary:hover, .btn-primary:focus {
-            background: var(--primary-btn-hover);
+        .btn-secondary:hover {
+            background: #3b82f6;
         }
-        .back-link {
-            color: var(--primary-btn);
-            text-decoration: none;
-            font-size: 0.98rem;
+        .add-btn {
+            background: #10b981;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            transition: background 0.2s;
+            margin-bottom: 16px;
         }
-        .back-link:hover {
-            color: var(--primary-btn-hover);
-            text-decoration: underline;
-        }
-        @media (max-width: 991.98px) {
-            .main-content {
-                margin-left: 0;
-                padding: 16px 6px;
-            }
-            .sidebar {
-                width: 100vw;
-                height: auto;
-                position: relative;
-                box-shadow: none;
-            }
+        .add-btn:hover {
+            background: #059669;
         }
     </style>
 </head>
@@ -150,7 +140,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/item/list">
+                    <a class="nav-link active" href="<%=request.getContextPath()%>/item/list">
                         <i class="fas fa-box"></i> Items
                     </a>
                 </li>
@@ -179,46 +169,64 @@
     </div>
     <!-- Main Content -->
     <div class="main-content">
-        <div class="form-container">
-            <div class="mb-3 text-center">
-                <a href="../dashboard.jsp" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        <% String success = null;
+           if (session.getAttribute("success") != null) {
+               success = (String) session.getAttribute("success");
+               session.removeAttribute("success");
+           }
+        %>
+        <% if (success != null) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <% String success = (String) request.getAttribute("success"); %>
-            <% String error = (String) request.getAttribute("error"); %>
-            <% if (success != null) { %>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <%= success %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <% } %>
-            <% if (error != null) { %>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <%= error %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <% } %>
-            <h2 class="form-title">Add Customer</h2>
-            <form action="<%=request.getContextPath()%>/AddCustomerServlet" method="post" autocomplete="off">
-                <div class="mb-3">
-                    <label for="account_number" class="form-label">Account Number</label>
-                    <input type="text" class="form-control" id="account_number" name="account_number" maxlength="50" required>
-                </div>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" maxlength="100" required>
-                </div>
-                <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" maxlength="255" required>
-                </div>
-                <div class="mb-3">
-                    <label for="telephone" class="form-label">Telephone</label>
-                    <input type="text" class="form-control" id="telephone" name="telephone" maxlength="20" required>
-                </div>
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Customer</button>
-                </div>
-            </form>
+        <% } %>
+        <div class="container-custom">
+            <h2>Items</h2>
+            <a href="add.jsp" class="add-btn"><i class="fas fa-plus"></i> Add New Item</a>
+            <table class="table table-bordered table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <%
+                    List<Item> items = (List<Item>) request.getAttribute("items");
+                    if (items != null && !items.isEmpty()) {
+                        for (Item item : items) {
+                %>
+                    <tr>
+                        <td><%= item.getItemCode() %></td>
+                        <td><%= item.getName() %></td>
+                        <td><%= item.getDescription() %></td>
+                        <td>LKR <%= String.format("%.2f", item.getPrice()) %></td>
+                        <td><%= item.getStock() %></td>
+                        <td><%= item.getCategory() %></td>
+                        <td>
+                            <a href="<%=request.getContextPath()%>/EditItemServlet?item_code=<%= item.getItemCode() %>" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="<%=request.getContextPath()%>/item/delete?item_code=<%= item.getItemCode() %>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                        </td>
+                    </tr>
+                <%
+                        }
+                    } else {
+                %>
+                    <tr>
+                        <td colspan="7" class="text-center">No items found.</td>
+                    </tr>
+                <%
+                    }
+                %>
+                </tbody>
+            </table>
+            <a href="../dashboard.jsp" class="btn btn-secondary">Back to Dashboard</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

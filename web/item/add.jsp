@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Customer - Pahana Edu Bookshop</title>
+    <title>Add Item - Pahana Edu Bookshop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -115,18 +115,6 @@
             color: var(--primary-btn-hover);
             text-decoration: underline;
         }
-        @media (max-width: 991.98px) {
-            .main-content {
-                margin-left: 0;
-                padding: 16px 6px;
-            }
-            .sidebar {
-                width: 100vw;
-                height: auto;
-                position: relative;
-                box-shadow: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -149,11 +137,12 @@
                         <i class="fas fa-users"></i> Customers
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/item/list">
-                        <i class="fas fa-box"></i> Items
-                    </a>
-                </li>
+                 <li class="nav-item">
+                                   <a class="nav-link" href="<%=request.getContextPath()%>/item/list">
+                                       <i class="fas fa-box"></i> Items
+                                   </a>
+                               </li>
+               
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/billing/create">
                         <i class="fas fa-receipt"></i> Create Bill
@@ -183,40 +172,37 @@
             <div class="mb-3 text-center">
                 <a href="../dashboard.jsp" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
             </div>
-            <% String success = (String) request.getAttribute("success"); %>
-            <% String error = (String) request.getAttribute("error"); %>
-            <% if (success != null) { %>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <%= success %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <% } %>
-            <% if (error != null) { %>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <%= error %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <% } %>
-            <h2 class="form-title">Add Customer</h2>
-            <form action="<%=request.getContextPath()%>/AddCustomerServlet" method="post" autocomplete="off">
+            <h2 class="form-title">Add Item</h2>
+            <form action="<%=request.getContextPath()%>/AddItemServlet" method="post" autocomplete="off">
                 <div class="mb-3">
-                    <label for="account_number" class="form-label">Account Number</label>
-                    <input type="text" class="form-control" id="account_number" name="account_number" maxlength="50" required>
+                    <label for="item_code" class="form-label">Item Code</label>
+                    <input type="text" class="form-control" id="item_code" name="item_code" maxlength="50" required>
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" maxlength="100" required>
                 </div>
                 <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" maxlength="255" required>
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" maxlength="255">
                 </div>
                 <div class="mb-3">
-                    <label for="telephone" class="form-label">Telephone</label>
-                    <input type="text" class="form-control" id="telephone" name="telephone" maxlength="20" required>
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">LKR</span>
+                        <input type="text" class="form-control" id="price" name="price" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="stock" name="stock" required>
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category" maxlength="50">
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Customer</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Item</button>
                 </div>
             </form>
         </div>

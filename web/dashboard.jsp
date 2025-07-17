@@ -176,32 +176,32 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="customer/list">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/customer/list">
                         <i class="fas fa-users"></i> Customers
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="item/list">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/item/list">
                         <i class="fas fa-box"></i> Items
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="billing/create">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/create">
                         <i class="fas fa-receipt"></i> Create Bill
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="billing/list">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/list">
                         <i class="fas fa-list"></i> Bills
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="report/sales">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/report/sales">
                         <i class="fas fa-chart-bar"></i> Reports
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="help.jsp">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/help.jsp">
                         <i class="fas fa-question-circle"></i> Help
                     </a>
                 </li>
