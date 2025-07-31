@@ -97,3 +97,16 @@
 0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:30:13 +0530] "GET /PahanaEdu/item/list HTTP/1.1" 200 7976
 0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:30:16 +0530] "GET /PahanaEdu/customer/list HTTP/1.1" 200 7925
 0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:30:21 +0530] "GET /PahanaEdu/item/list HTTP/1.1" 200 7976
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:34:52 +0530] "GET /PahanaEdu HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:34:54 +0530] "GET /PahanaEdu/ HTTP/1.1" 200 10376
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:01 +0530] "POST /PahanaEdu/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:01 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 12715
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:05 +0530] "GET /PahanaEdu/item/list HTTP/1.1" 200 7976
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:08 +0530] "GET /PahanaEdu/item/add.jsp HTTP/1.1" 200 8169
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:12 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 12715
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:13 +0530] "GET /PahanaEdu/customer/list HTTP/1.1" 200 7925
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:22 +0530] "GET /PahanaEdu/customer/list HTTP/1.1" 200 7925
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:23 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 12715
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:26 +0530] "GET /PahanaEdu/item/list HTTP/1.1" 200 7976
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:28 +0530] "GET /PahanaEdu/item/add.jsp HTTP/1.1" 200 8169
+0:0:0:0:0:0:0:1 - - [17/Jul/2025:16:35:31 +0530] "GET /PahanaEdu/dashboard.jsp HTTP/1.1" 200 12715

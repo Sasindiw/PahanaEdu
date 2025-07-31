@@ -31,6 +31,29 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
+    public Item getItemByCode(String itemCode) {
+        String sql = "SELECT item_code, name, description, price, stock, category FROM items WHERE item_code = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, itemCode);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                Item item = new Item();
+                item.setItemCode(rs.getString("item_code"));
+                item.setName(rs.getString("name"));
+                item.setDescription(rs.getString("description"));
+                item.setPrice(rs.getDouble("price"));
+                item.setStock(rs.getInt("stock"));
+                item.setCategory(rs.getString("category"));
+                return item;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public boolean insertItem(Item item) {
         String sql = "INSERT INTO items (item_code, name, description, price, stock, category) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
