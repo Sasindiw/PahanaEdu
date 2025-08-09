@@ -39,7 +39,7 @@ public class TestServlet extends HttpServlet {
             if (adminUser != null) {
                 response.getWriter().println("✅ Admin user found:<br>");
                 response.getWriter().println("- Username: " + adminUser.getUsername() + "<br>");
-                response.getWriter().println("- Password Hash: " + adminUser.getPasswordHash() + "<br>");
+                response.getWriter().println("- Password: [hidden]<br>");
                 response.getWriter().println("- Full Name: " + adminUser.getFullName() + "<br>");
                 response.getWriter().println("- Role: " + adminUser.getRole() + "<br>");
                 
@@ -48,7 +48,7 @@ public class TestServlet extends HttpServlet {
                 if ("Admin123".equals(adminUser.getPasswordHash())) {
                     response.getWriter().println("✅ Password matches! Authentication should work.<br>");
                 } else {
-                    response.getWriter().println("❌ Password mismatch! Expected: Admin123, Got: " + adminUser.getPasswordHash() + "<br>");
+                    response.getWriter().println("❌ Password mismatch!<br>");
                 }
             } else {
                 response.getWriter().println("❌ Admin user not found!<br>");

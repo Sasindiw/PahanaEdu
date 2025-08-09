@@ -68,11 +68,9 @@ CREATE TABLE public.bill_items (
 - `src/com/pahanaedu/dao/BillItemDAOImpl.java` - Bill item data access implementation
 
 ### Servlets
-- `src/com/pahanaedu/servlets/CreateBillServlet.java` - Handles bill creation
 - `src/com/pahanaedu/servlets/PrintBillServlet.java` - Handles bill printing
 
 ### JSP Pages
-- `web/billing/create.jsp` - Bill creation form
 - `web/billing/print.jsp` - Bill print view
 
 ### Database
@@ -82,23 +80,12 @@ CREATE TABLE public.bill_items (
 
 ### 1. Accessing the Billing System
 - Navigate to Dashboard
-- Click "Create Bill" in the sidebar or quick actions
-- Or directly access: `/billing/create`
 
 ### 2. Creating a Bill
-1. Select a customer from the dropdown
-2. Click "Add Item" to add items to the bill
-3. Select item, quantity will be automatically set to 1
-4. Unit price is automatically populated from item data
-5. Total is calculated automatically (quantity × unit price)
-6. Add more items as needed
-7. Review the bill summary
-8. Click "Calculate & Save Bill" to save
+- This feature has been removed.
 
 ### 3. Printing a Bill
-- After creating a bill, you'll be redirected to the print page
-- Click "Print Bill" to print the current bill
-- Use browser's print functionality or save as PDF
+- Navigate to an existing bill's print view.
 
 ## Key Features
 

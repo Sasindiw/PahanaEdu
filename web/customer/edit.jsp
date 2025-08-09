@@ -34,11 +34,35 @@
     </style>
 </head>
 <body>
-    <div class="form-container">
+    <!-- Sidebar -->
+    <div class="sidebar" style="position:fixed;top:0;left:0;height:100vh;width:250px;background:#1e293b;color:#fff;z-index:1000;box-shadow:2px 0 10px rgba(0,0,0,.07);">
+        <div class="sidebar-header" style="padding:24px 10px 16px 10px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <i class="fas fa-book-reader fa-2x mb-2"></i>
+            <h5 style="font-weight:bold;letter-spacing:1px;color:#fff;margin:0;">Pahana Edu</h5>
+            <small style="color:#cbd5e1;">Bookshop Management</small>
+        </div>
+        <nav class="sidebar-menu" style="padding:24px 0;">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#fff;padding:14px 28px;font-size:1.08rem;border-radius:30px 0 0 30px;opacity:.85;" href="<%=request.getContextPath()%>/dashboard.jsp"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="color:#fff;padding:14px 28px;font-size:1.08rem;border-radius:30px 0 0 30px;background:#60a5fa;opacity:1;" href="<%=request.getContextPath()%>/customer/list"><i class="fas fa-users"></i> Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#fff;padding:14px 28px;font-size:1.08rem;border-radius:30px 0 0 30px;opacity:.85;" href="<%=request.getContextPath()%>/item/list"><i class="fas fa-box"></i> Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#fff;padding:14px 28px;font-size:1.08rem;border-radius:30px 0 0 30px;opacity:.85;" href="<%=request.getContextPath()%>/help.jsp"><i class="fas fa-question-circle"></i> Help</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="form-container" style="max-width: 500px; margin: 48px auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); padding: 32px 28px 24px 28px; margin-left: 290px;">
         <div class="mb-3 text-center">
             <a href="list.jsp" class="back-link"><i class="fas fa-arrow-left"></i> Back to Customers</a>
         </div>
-        <h2 class="form-title">Edit Customer</h2>
+        <h2 class="form-title" style="font-weight:bold;color:#1e293b;margin-bottom:24px;text-align:center;letter-spacing:1px;">Edit Customer</h2>
         <% if (customer != null) { %>
         <form action="<%=request.getContextPath()%>/customer/update" method="post" autocomplete="off">
             <input type="hidden" name="account_number" value="<%= customer.getAccountNumber() %>">

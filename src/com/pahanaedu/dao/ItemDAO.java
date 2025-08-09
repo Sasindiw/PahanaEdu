@@ -9,4 +9,6 @@ public interface ItemDAO {
     boolean insertItem(Item item);
     boolean deleteItem(String itemCode);
     boolean updateItem(Item item);
+    /** Decrement stock by quantity (use negative value to increment). Returns true if updated. */
+    boolean decrementStock(String itemCode, int quantity);
 } 

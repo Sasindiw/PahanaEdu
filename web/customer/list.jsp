@@ -132,11 +132,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/report/sales">
-                        <i class="fas fa-chart-bar"></i> Reports
-                    </a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/help.jsp">
                         <i class="fas fa-question-circle"></i> Help
@@ -152,10 +148,21 @@
                success = (String) session.getAttribute("success");
                session.removeAttribute("success");
            }
+           String errMsg = null;
+           if (session.getAttribute("error") != null) {
+               errMsg = (String) session.getAttribute("error");
+               session.removeAttribute("error");
+           }
         %>
         <% if (success != null) { %>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+        <% if (errMsg != null) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= errMsg %>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <% } %>

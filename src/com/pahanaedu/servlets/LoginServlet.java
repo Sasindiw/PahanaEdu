@@ -16,12 +16,18 @@ public class LoginServlet extends HttpServlet {
     private UserService userService = new UserService();
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Display the login page for GET requests
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         
-        // Debug logging
-        System.out.println("Login attempt - Username: " + username + ", Password: " + password);
+        // Minimal logging without sensitive data
+        System.out.println("Login attempt - Username: " + username);
 
         User user = userService.authenticate(username, password);
         if (user != null) {
