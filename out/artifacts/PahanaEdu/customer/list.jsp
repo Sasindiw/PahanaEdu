@@ -148,10 +148,21 @@
                success = (String) session.getAttribute("success");
                session.removeAttribute("success");
            }
+           String errMsg = null;
+           if (session.getAttribute("error") != null) {
+               errMsg = (String) session.getAttribute("error");
+               session.removeAttribute("error");
+           }
         %>
         <% if (success != null) { %>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+        <% if (errMsg != null) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= errMsg %>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <% } %>

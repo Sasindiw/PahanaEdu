@@ -177,8 +177,8 @@
                                 <td>${status.index + 1}</td>
                                 <td>${billItem.itemCode}</td>
                                 <td>${billItem.quantity}</td>
-                                <td>$<fmt:formatNumber value="${billItem.unitPrice}" pattern="#,##0.00"/></td>
-                                <td>$<fmt:formatNumber value="${billItem.totalPrice}" pattern="#,##0.00"/></td>
+                                <td>LKR <fmt:formatNumber value="${billItem.unitPrice}" pattern="#,##0.00"/></td>
+                                <td>LKR <fmt:formatNumber value="${billItem.totalPrice}" pattern="#,##0.00"/></td>
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -186,7 +186,7 @@
 
                 <!-- Bill Total -->
                 <div class="bill-total">
-                    <h4>Total Amount: $<fmt:formatNumber value="${bill.totalAmount}" pattern="#,##0.00"/></h4>
+                    <h4>Total Amount: LKR <fmt:formatNumber value="${bill.totalAmount}" pattern="#,##0.00"/></h4>
                 </div>
 
                 <!-- Action Buttons -->

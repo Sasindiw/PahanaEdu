@@ -8,17 +8,17 @@ public class UserService {
     private UserDAO userDAO = new UserDAOImpl();
 
     public User authenticate(String username, String password) {
-        System.out.println("UserService.authenticate - Username: " + username + ", Password: " + password);
+        System.out.println("UserService.authenticate - Username: " + username);
         
         User user = userDAO.getUserByUsername(username);
         if (user != null) {
-            System.out.println("User found: " + user.getUsername() + ", Stored password: '" + user.getPasswordHash() + "'");
+            System.out.println("User found: " + user.getUsername());
             // For production, use hashed password check (e.g., BCrypt)
             if (password.equals(user.getPasswordHash())) {
                 System.out.println("Password match successful!");
                 return user;
             } else {
-                System.out.println("Password mismatch! Expected: '" + password + "', Got: '" + user.getPasswordHash() + "'");
+                System.out.println("Password mismatch for user: " + username);
             }
         } else {
             System.out.println("User not found for username: " + username);

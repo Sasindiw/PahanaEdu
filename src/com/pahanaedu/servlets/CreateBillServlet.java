@@ -106,6 +106,7 @@ public class CreateBillServlet extends HttpServlet {
                     bi.setUnitPrice(new BigDecimal(unitPrices[i]));
                     bi.setTotalPrice(new BigDecimal(totalPrices[i]));
                     billItemDAO.createBillItem(bi);
+                    // TODO: decrement stock here if needed using itemDAO.updateItem(...)
                 }
             }
 

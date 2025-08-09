@@ -47,7 +47,7 @@ public class DebugServlet extends HttpServlet {
                     response.getWriter().println("✅ Admin user found in database:<br>");
                     response.getWriter().println("- User ID: " + rs.getInt("user_id") + "<br>");
                     response.getWriter().println("- Username: " + rs.getString("username") + "<br>");
-                    response.getWriter().println("- Password Hash: '" + rs.getString("password_hash") + "'<br>");
+                    response.getWriter().println("- Password: [hidden]<br>");
                     response.getWriter().println("- Full Name: " + rs.getString("full_name") + "<br>");
                     response.getWriter().println("- Email: " + rs.getString("email") + "<br>");
                     response.getWriter().println("- Role: " + rs.getString("role") + "<br>");
@@ -60,7 +60,7 @@ public class DebugServlet extends HttpServlet {
                     if (adminUser != null) {
                         response.getWriter().println("✅ DAO successfully retrieved user:<br>");
                         response.getWriter().println("- Username: " + adminUser.getUsername() + "<br>");
-                        response.getWriter().println("- Password Hash: '" + adminUser.getPasswordHash() + "'<br>");
+                        response.getWriter().println("- Password: [hidden]<br>");
                         response.getWriter().println("- Full Name: " + adminUser.getFullName() + "<br>");
                         response.getWriter().println("- Role: " + adminUser.getRole() + "<br>");
                         
@@ -69,7 +69,7 @@ public class DebugServlet extends HttpServlet {
                         UserService userService = new UserService();
                         
                         // Test with correct password
-                        User authenticatedUser = userService.authenticate("admin", "Admin123");
+                         User authenticatedUser = userService.authenticate("admin", "Admin123");
                         if (authenticatedUser != null) {
                             response.getWriter().println("✅ Authentication successful with 'Admin123'<br>");
                         } else {
@@ -86,12 +86,8 @@ public class DebugServlet extends HttpServlet {
                         
                         // Test password comparison
                         response.getWriter().println("<h3>6. Password Comparison Test</h3>");
-                        String storedPassword = adminUser.getPasswordHash();
-                        response.getWriter().println("- Stored password: '" + storedPassword + "'<br>");
-                        response.getWriter().println("- Expected password: 'Admin123'<br>");
-                        response.getWriter().println("- Password length: " + storedPassword.length() + "<br>");
-                        response.getWriter().println("- Password equals 'Admin123': " + storedPassword.equals("Admin123") + "<br>");
-                        response.getWriter().println("- Password equals 'admin123': " + storedPassword.equals("admin123") + "<br>");
+                         String storedPassword = "[hidden]";
+                         response.getWriter().println("- Stored password: '" + storedPassword + "'<br>");
                         
                     } else {
                         response.getWriter().println("❌ DAO failed to retrieve user<br>");

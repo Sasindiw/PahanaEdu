@@ -169,6 +169,10 @@
                 <%= success %>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            <script>
+                // Show JavaScript alert as well
+                alert('<%= success %>');
+            </script>
         <% } %>
         <div class="container-custom">
             <h2>Items</h2>
@@ -199,7 +203,7 @@
                         <td><%= item.getStock() %></td>
                         <td><%= item.getCategory() %></td>
                         <td>
-                            <a href="<%=request.getContextPath()%>/EditItemServlet?item_code=<%= item.getItemCode() %>" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="<%=request.getContextPath()%>/item/edit?item_code=<%= item.getItemCode() %>" class="btn btn-sm btn-warning">Edit</a>
                             <a href="<%=request.getContextPath()%>/item/delete?item_code=<%= item.getItemCode() %>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                         </td>
                     </tr>

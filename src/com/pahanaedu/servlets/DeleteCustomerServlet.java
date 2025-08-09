@@ -15,8 +15,18 @@ public class DeleteCustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String accountNumber = request.getParameter("accountNumber");
+        if (accountNumber == null || accountNumber.trim().isEmpty()) {
+            request.getSession().setAttribute("error", "Missing account number for deletion.");
+            response.sendRedirect(request.getContextPath() + "/customer/list");
+            return;
+        }
         CustomerDAO customerDAO = new CustomerDAOImpl();
-        customerDAO.deleteCustomer(accountNumber);
+        boolean deleted = customerDAO.deleteCustomer(accountNumber);
+        if (!deleted) {
+            request.getSession().setAttribute("error", "Cannot delete customer. It may be linked to existing bills.");
+        } else {
+            request.getSession().setAttribute("success", "Customer deleted successfully.");
+        }
         response.sendRedirect(request.getContextPath() + "/customer/list");
     }
 } 

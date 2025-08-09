@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
                 user.setFullName(rs.getString("full_name"));
                 user.setEmail(rs.getString("email"));
                 user.setRole(rs.getString("role"));
-                System.out.println("User found in database: " + user.getUsername() + ", Password: '" + user.getPasswordHash() + "'");
+                System.out.println("User found in database: " + user.getUsername());
             } else {
                 System.out.println("No user found in database for username: " + username);
             }

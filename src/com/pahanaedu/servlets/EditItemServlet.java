@@ -70,6 +70,8 @@ public class EditItemServlet extends HttpServlet {
         boolean success = itemDAO.updateItem(item);
 
         if (success) {
+            // Set success message in session
+            request.getSession().setAttribute("success", "Item updated successfully!");
             response.sendRedirect(request.getContextPath() + "/item/list");
         } else {
             request.setAttribute("error", "Failed to update item. Please try again.");

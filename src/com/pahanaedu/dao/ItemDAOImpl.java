@@ -104,4 +104,20 @@ public class ItemDAOImpl implements ItemDAO {
             return false;
         }
     }
+
+    @Override
+    public boolean decrementStock(String itemCode, int quantity) {
+        String sql = "UPDATE items SET stock = stock - ? WHERE item_code = ? AND stock >= ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, quantity);
+            stmt.setString(2, itemCode);
+            stmt.setInt(3, quantity);
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 } 
