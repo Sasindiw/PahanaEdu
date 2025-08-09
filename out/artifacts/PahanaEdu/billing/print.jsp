@@ -194,9 +194,7 @@
                     <button type="button" class="btn btn-primary" onclick="window.print()">
                         <i class="fas fa-print"></i> Print Bill
                     </button>
-                    <a href="${pageContext.request.contextPath}/billing/create" class="btn btn-success">
-                        <i class="fas fa-plus"></i> Create New Bill
-                    </a>
+                    
                     <a href="${pageContext.request.contextPath}/dashboard.jsp" class="btn btn-secondary">
                         <i class="fas fa-home"></i> Back to Dashboard
                     </a>

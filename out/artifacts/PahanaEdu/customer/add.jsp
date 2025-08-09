@@ -157,11 +157,7 @@
                 <li class="nav-item">
                     
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/report/sales">
-                        <i class="fas fa-chart-bar"></i> Reports
-                    </a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/help.jsp">
                         <i class="fas fa-question-circle"></i> Help
