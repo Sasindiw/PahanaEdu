@@ -117,6 +117,23 @@
         }
     </style>
 </head>
+
+<%-- Show alert if item cannot be deleted because it's used in a bill --%>
+<%
+    String deleteError = request.getParameter("deleteError");
+    if ("true".equals(deleteError)) {
+%>
+<div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width:500px; margin: 20px auto 0 auto;">
+    <strong>Cannot Delete!</strong> This item is used in a bill and cannot be removed.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%
+    }
+%>
+
+
+
+
 <body>
     <!-- Sidebar -->
     <div class="sidebar">

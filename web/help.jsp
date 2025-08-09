@@ -122,16 +122,6 @@
                 </div>
             </div>
 
-            <!-- Troubleshooting -->
-            <div id="troubleshooting" class="anchor mt-4">
-                <h4 class="section-title"><i class="fas fa-tools"></i> Troubleshooting</h4>
-                <ul>
-                    <li><strong>Login fails</strong>: Verify username/password. Ensure database is up.</li>
-                    <li><strong>Database error</strong>: Check DB credentials and run the SQL setup scripts.</li>
-                    <li><strong>JSP error on Create Bill</strong>: Ensure <code>WEB-INF/lib/jstl-1.2.jar</code> is present and clear Tomcat work cache.</li>
-                    <li><strong>Changes not visible</strong>: Redeploy and restart Tomcat; clear browser cache if needed.</li>
-                </ul>
-            </div>
 
             <!-- Contact Support -->
             <div id="contact-support" class="anchor mt-4">

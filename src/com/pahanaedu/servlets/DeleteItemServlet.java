@@ -20,13 +20,16 @@ public class DeleteItemServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/item/list");
             return;
         }
+
         ItemDAO itemDAO = new ItemDAOImpl();
         boolean deleted = itemDAO.deleteItem(itemCode);
+
         if (!deleted) {
-            request.getSession().setAttribute("error", "Cannot delete item. It may be referenced by bills.");
+            request.getSession().setAttribute("error", "Cannot delete item. It is used in one or more bills.");
         } else {
             request.getSession().setAttribute("success", "Item deleted successfully.");
         }
+
         response.sendRedirect(request.getContextPath() + "/item/list");
     }
-} 
+}

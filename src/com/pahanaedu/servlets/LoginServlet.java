@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+
         // Minimal logging without sensitive data
         System.out.println("Login attempt - Username: " + username);
 
@@ -34,11 +34,15 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Authentication successful for user: " + username);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+
+            // Redirect to dashboard with login success parameter
+            response.sendRedirect(request.getContextPath() + "/dashboard.jsp?loginSuccess=true");
         } else {
             System.out.println("Authentication failed for user: " + username);
             request.setAttribute("error", "Invalid username or password");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
     }
+
+
 }

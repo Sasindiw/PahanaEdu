@@ -117,6 +117,20 @@
         }
     </style>
 </head>
+
+<%-- Show success alert if item was added --%>
+<%
+    String success = request.getParameter("success");
+    if ("true".equals(success)) {
+%>
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="max-width:500px; margin: 20px auto 0 auto;">
+    <strong>Success!</strong> Item has been added successfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%
+    }
+%>
+
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
