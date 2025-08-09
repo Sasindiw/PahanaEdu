@@ -57,11 +57,11 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Bill List</h1>
                     <div>
-                        <a href="<%=request.getContextPath()%>/billing/create" class="btn btn-primary">
+                        <a href="<%=request.getContextPath()%>/billing/create" class="btn btn-success me-2">
                             <i class="fas fa-plus"></i> Create New Bill
                         </a>
-                        <a href="<%=request.getContextPath()%>/dashboard.jsp" class="btn btn-secondary">
-                            <i class="fas fa-arrow-left"></i> Back to Dashboard
+                        <a href="<%=request.getContextPath()%>/dashboard.jsp" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Back to Dashboard
                         </a>
                     </div>
                 </div>
@@ -130,8 +130,8 @@
                                 <i class="fas fa-receipt fa-3x text-muted mb-3"></i>
                                 <h5 class="text-muted">No bills found</h5>
                                 <p class="text-muted">Create your first bill to get started.</p>
-                                <a href="<%=request.getContextPath()%>/billing/create" class="btn btn-primary">
-                                    <i class="fas fa-plus"></i> Create First Bill
+                                <a href="<%=request.getContextPath()%>/dashboard.jsp" class="btn btn-primary">
+                                    <i class="fas fa-home"></i> Back to Dashboard
                                 </a>
                             </div>
                         <% } %>

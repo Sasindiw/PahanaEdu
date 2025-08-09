@@ -1,60 +1,88 @@
 package com.pahanaedu.model;
 
+import java.math.BigDecimal;
+
 public class BillItem {
     private int billItemId;
     private int billId;
     private String itemCode;
     private int quantity;
-    private double unitPrice;
-    private double totalPrice;
-    
-    // Additional fields for display
-    private String itemName;
-    private String itemDescription;
+    private BigDecimal unitPrice;
+    private BigDecimal totalPrice;
 
-    // Constructors
-    public BillItem() {}
+    // Default constructor
+    public BillItem() {
+    }
 
-    public BillItem(String itemCode, int quantity, double unitPrice) {
+    // Constructor with all fields
+    public BillItem(int billItemId, int billId, String itemCode, int quantity, 
+                   BigDecimal unitPrice, BigDecimal totalPrice) {
+        this.billItemId = billItemId;
+        this.billId = billId;
         this.itemCode = itemCode;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
-        this.totalPrice = quantity * unitPrice;
+        this.totalPrice = totalPrice;
     }
 
     // Getters and Setters
-    public int getBillItemId() { return billItemId; }
-    public void setBillItemId(int billItemId) { this.billItemId = billItemId; }
-
-    public int getBillId() { return billId; }
-    public void setBillId(int billId) { this.billId = billId; }
-
-    public String getItemCode() { return itemCode; }
-    public void setItemCode(String itemCode) { this.itemCode = itemCode; }
-
-    public int getQuantity() { return quantity; }
-    public void setQuantity(int quantity) { 
-        this.quantity = quantity; 
-        calculateTotal();
+    public int getBillItemId() {
+        return billItemId;
     }
 
-    public double getUnitPrice() { return unitPrice; }
-    public void setUnitPrice(double unitPrice) { 
-        this.unitPrice = unitPrice; 
-        calculateTotal();
+    public void setBillItemId(int billItemId) {
+        this.billItemId = billItemId;
     }
 
-    public double getTotalPrice() { return totalPrice; }
-    public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
-
-    public String getItemName() { return itemName; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
-
-    public String getItemDescription() { return itemDescription; }
-    public void setItemDescription(String itemDescription) { this.itemDescription = itemDescription; }
-
-    // Helper methods
-    public void calculateTotal() {
-        this.totalPrice = this.quantity * this.unitPrice;
+    public int getBillId() {
+        return billId;
     }
-} 
+
+    public void setBillId(int billId) {
+        this.billId = billId;
+    }
+
+    public String getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "BillItem{" +
+                "billItemId=" + billItemId +
+                ", billId=" + billId +
+                ", itemCode='" + itemCode + '\'' +
+                ", quantity=" + quantity +
+                ", unitPrice=" + unitPrice +
+                ", totalPrice=" + totalPrice +
+                '}';
+    }
+}

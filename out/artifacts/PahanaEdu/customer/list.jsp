@@ -131,16 +131,7 @@
                         <i class="fas fa-box"></i> Items
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/create">
-                        <i class="fas fa-receipt"></i> Create Bill
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/list">
-                        <i class="fas fa-list"></i> Bills
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/report/sales">
                         <i class="fas fa-chart-bar"></i> Reports

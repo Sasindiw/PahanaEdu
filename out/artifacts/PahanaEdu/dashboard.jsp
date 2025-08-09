@@ -197,11 +197,7 @@
                         <i class="fas fa-receipt"></i> Create Bill
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/list">
-                        <i class="fas fa-list"></i> Bills
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/report/sales">
                         <i class="fas fa-chart-bar"></i> Reports
@@ -280,7 +276,7 @@
                             <a href="item/add.jsp" class="btn btn-success">
                                 <i class="fas fa-plus"></i> Add Item
                             </a>
-                            <a href="billing/create" class="btn btn-info">
+                            <a href="<%=request.getContextPath()%>/billing/create" class="btn btn-warning">
                                 <i class="fas fa-receipt"></i> Create Bill
                             </a>
                         </div>

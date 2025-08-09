@@ -2,52 +2,52 @@ package com.pahanaedu.dao;
 
 import com.pahanaedu.model.Bill;
 import com.pahanaedu.util.DatabaseConnection;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BillDAOImpl implements BillDAO {
-    
+
     @Override
-    public boolean createBill(Bill bill) {
-        String sql = "INSERT INTO bills (bill_number, customer_account_number, total_amount, status, created_by) VALUES (?, ?, ?, ?, ?)";
+    public int createBill(Bill bill) {
+        String sql = "INSERT INTO bills (bill_number, customer_account_number, bill_date, total_amount, status, created_by, created_date) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             
-            stmt.setString(1, bill.getBillNumber());
-            stmt.setString(2, bill.getCustomerAccountNumber());
-            stmt.setDouble(3, bill.getTotalAmount());
-            stmt.setString(4, bill.getStatus());
-            stmt.setString(5, bill.getCreatedBy());
+            pstmt.setString(1, bill.getBillNumber());
+            pstmt.setString(2, bill.getCustomerAccountNumber());
+            pstmt.setDate(3, new java.sql.Date(bill.getBillDate().getTime()));
+            pstmt.setBigDecimal(4, bill.getTotalAmount());
+            pstmt.setString(5, bill.getStatus());
+            pstmt.setString(6, bill.getCreatedBy());
+            pstmt.setTimestamp(7, new Timestamp(bill.getCreatedDate().getTime()));
             
-            int affectedRows = stmt.executeUpdate();
+            int affectedRows = pstmt.executeUpdate();
             
             if (affectedRows > 0) {
-                ResultSet rs = stmt.getGeneratedKeys();
+                ResultSet rs = pstmt.getGeneratedKeys();
                 if (rs.next()) {
-                    bill.setBillId(rs.getInt(1));
+                    return rs.getInt(1);
                 }
-                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return -1;
     }
-    
+
     @Override
     public Bill getBillById(int billId) {
-        String sql = "SELECT b.*, c.name as customer_name, c.address as customer_address " +
-                    "FROM bills b " +
-                    "LEFT JOIN customers c ON b.customer_account_number = c.account_number " +
-                    "WHERE b.bill_id = ?";
+        String sql = "SELECT * FROM bills WHERE bill_id = ?";
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            stmt.setInt(1, billId);
-            ResultSet rs = stmt.executeQuery();
+            pstmt.setInt(1, billId);
+            ResultSet rs = pstmt.executeQuery();
             
             if (rs.next()) {
                 return mapResultSetToBill(rs);
@@ -57,19 +57,16 @@ public class BillDAOImpl implements BillDAO {
         }
         return null;
     }
-    
+
     @Override
     public Bill getBillByNumber(String billNumber) {
-        String sql = "SELECT b.*, c.name as customer_name, c.address as customer_address " +
-                    "FROM bills b " +
-                    "LEFT JOIN customers c ON b.customer_account_number = c.account_number " +
-                    "WHERE b.bill_number = ?";
+        String sql = "SELECT * FROM bills WHERE bill_number = ?";
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            stmt.setString(1, billNumber);
-            ResultSet rs = stmt.executeQuery();
+            pstmt.setString(1, billNumber);
+            ResultSet rs = pstmt.executeQuery();
             
             if (rs.next()) {
                 return mapResultSetToBill(rs);
@@ -79,19 +76,15 @@ public class BillDAOImpl implements BillDAO {
         }
         return null;
     }
-    
+
     @Override
     public List<Bill> getAllBills() {
-        String sql = "SELECT b.*, c.name as customer_name, c.address as customer_address " +
-                    "FROM bills b " +
-                    "LEFT JOIN customers c ON b.customer_account_number = c.account_number " +
-                    "ORDER BY b.bill_date DESC";
-        
+        String sql = "SELECT * FROM bills ORDER BY created_date DESC";
         List<Bill> bills = new ArrayList<>();
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
             
             while (rs.next()) {
                 bills.add(mapResultSetToBill(rs));
@@ -101,22 +94,17 @@ public class BillDAOImpl implements BillDAO {
         }
         return bills;
     }
-    
+
     @Override
     public List<Bill> getBillsByCustomer(String customerAccountNumber) {
-        String sql = "SELECT b.*, c.name as customer_name, c.address as customer_address " +
-                    "FROM bills b " +
-                    "LEFT JOIN customers c ON b.customer_account_number = c.account_number " +
-                    "WHERE b.customer_account_number = ? " +
-                    "ORDER BY b.bill_date DESC";
-        
+        String sql = "SELECT * FROM bills WHERE customer_account_number = ? ORDER BY created_date DESC";
         List<Bill> bills = new ArrayList<>();
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            stmt.setString(1, customerAccountNumber);
-            ResultSet rs = stmt.executeQuery();
+            pstmt.setString(1, customerAccountNumber);
+            ResultSet rs = pstmt.executeQuery();
             
             while (rs.next()) {
                 bills.add(mapResultSetToBill(rs));
@@ -126,70 +114,78 @@ public class BillDAOImpl implements BillDAO {
         }
         return bills;
     }
-    
+
     @Override
     public boolean updateBill(Bill bill) {
-        String sql = "UPDATE bills SET total_amount = ?, status = ? WHERE bill_id = ?";
+        String sql = "UPDATE bills SET bill_number = ?, customer_account_number = ?, bill_date = ?, " +
+                    "total_amount = ?, status = ?, created_by = ?, created_date = ? WHERE bill_id = ?";
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            stmt.setDouble(1, bill.getTotalAmount());
-            stmt.setString(2, bill.getStatus());
-            stmt.setInt(3, bill.getBillId());
+            pstmt.setString(1, bill.getBillNumber());
+            pstmt.setString(2, bill.getCustomerAccountNumber());
+            pstmt.setDate(3, new java.sql.Date(bill.getBillDate().getTime()));
+            pstmt.setBigDecimal(4, bill.getTotalAmount());
+            pstmt.setString(5, bill.getStatus());
+            pstmt.setString(6, bill.getCreatedBy());
+            pstmt.setTimestamp(7, new Timestamp(bill.getCreatedDate().getTime()));
+            pstmt.setInt(8, bill.getBillId());
             
-            return stmt.executeUpdate() > 0;
+            return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
-    
+
     @Override
     public boolean deleteBill(int billId) {
         String sql = "DELETE FROM bills WHERE bill_id = ?";
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            stmt.setInt(1, billId);
-            return stmt.executeUpdate() > 0;
+            pstmt.setInt(1, billId);
+            return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
-    
+
     @Override
     public String generateBillNumber() {
-        String sql = "SELECT nextval('bill_number_seq')";
+        String sql = "SELECT COUNT(*) FROM bills WHERE bill_date = CURRENT_DATE";
         
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
             
             if (rs.next()) {
-                int nextVal = rs.getInt(1);
-                return String.format("BILL-%04d", nextVal);
+                int count = rs.getInt(1);
+                String dateStr = new java.sql.Date(System.currentTimeMillis()).toString().replace("-", "");
+                return "BILL" + dateStr + String.format("%04d", count + 1);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return "BILL-" + System.currentTimeMillis();
+        
+        // Fallback if query fails
+        String dateStr = new java.sql.Date(System.currentTimeMillis()).toString().replace("-", "");
+        return "BILL" + dateStr + "0001";
     }
-    
+
     private Bill mapResultSetToBill(ResultSet rs) throws SQLException {
         Bill bill = new Bill();
         bill.setBillId(rs.getInt("bill_id"));
         bill.setBillNumber(rs.getString("bill_number"));
         bill.setCustomerAccountNumber(rs.getString("customer_account_number"));
         bill.setBillDate(rs.getDate("bill_date"));
-        bill.setTotalAmount(rs.getDouble("total_amount"));
+        bill.setTotalAmount(rs.getBigDecimal("total_amount"));
         bill.setStatus(rs.getString("status"));
         bill.setCreatedBy(rs.getString("created_by"));
         bill.setCreatedDate(rs.getTimestamp("created_date"));
-        bill.setCustomerName(rs.getString("customer_name"));
-        bill.setCustomerAddress(rs.getString("customer_address"));
         return bill;
     }
-} 
+}

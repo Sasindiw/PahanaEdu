@@ -1,13 +1,9 @@
 package com.pahanaedu.servlets;
 
 import com.pahanaedu.dao.BillDAO;
-import com.pahanaedu.dao.BillDAOImpl;
 import com.pahanaedu.dao.BillItemDAO;
-import com.pahanaedu.dao.BillItemDAOImpl;
 import com.pahanaedu.dao.CustomerDAO;
-import com.pahanaedu.dao.CustomerDAOImpl;
 import com.pahanaedu.dao.ItemDAO;
-import com.pahanaedu.dao.ItemDAOImpl;
 import com.pahanaedu.model.Bill;
 import com.pahanaedu.model.BillItem;
 import com.pahanaedu.model.Customer;
@@ -21,47 +17,48 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet("/billing/create")
 public class CreateBillServlet extends HttpServlet {
-    private BillDAO billDAO = new BillDAOImpl();
-    private BillItemDAO billItemDAO = new BillItemDAOImpl();
-    private ItemDAO itemDAO = new ItemDAOImpl();
-    private CustomerDAO customerDAO = new CustomerDAOImpl();
+    private BillDAO billDAO;
+    private BillItemDAO billItemDAO;
+    private CustomerDAO customerDAO;
+    private ItemDAO itemDAO;
+
+    @Override
+    public void init() throws ServletException {
+        billDAO = new com.pahanaedu.dao.BillDAOImpl();
+        billItemDAO = new com.pahanaedu.dao.BillItemDAOImpl();
+        customerDAO = new com.pahanaedu.dao.CustomerDAOImpl();
+        itemDAO = new com.pahanaedu.dao.ItemDAOImpl();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        // Check if user is logged in
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        if (user == null) {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
-        
+
         try {
-            // Generate new bill number
-            String billNumber = billDAO.generateBillNumber();
-            request.setAttribute("billNumber", billNumber);
-            
-            // Load customers for dropdown
+            // Get customers and items for the form
             List<Customer> customers = customerDAO.getAllCustomers();
-            request.setAttribute("customers", customers);
-            
-            // Load items for dropdown
             List<Item> items = itemDAO.getAllItems();
+            
+            request.setAttribute("customers", customers);
             request.setAttribute("items", items);
             
-            // Forward to create bill page
             request.getRequestDispatcher("/billing/create.jsp").forward(request, response);
             
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("error", "Error loading data: " + e.getMessage());
+            request.setAttribute("error", "Error loading bill creation page: " + e.getMessage());
             request.getRequestDispatcher("/billing/create.jsp").forward(request, response);
         }
     }
@@ -70,78 +67,108 @@ public class CreateBillServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        request.setCharacterEncoding("UTF-8");
-        
-        // Check if user is logged in
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        if (user == null) {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
+
+        User user = (User) session.getAttribute("user");
+        
+        // Get form parameters
+        String customerAccountNumber = request.getParameter("customerAccountNumber");
+        String[] itemCodes = request.getParameterValues("itemCode");
+        String[] quantities = request.getParameterValues("quantity");
+        String[] unitPrices = request.getParameterValues("unitPrice");
+        String[] totalPrices = request.getParameterValues("totalPrice");
         
         try {
-            // Get form parameters
-            String customerAccountNumber = request.getParameter("customer_account_number");
-            String[] itemCodes = request.getParameterValues("item_code");
-            String[] quantities = request.getParameterValues("quantity");
+            // Validate input
+            if (customerAccountNumber == null || customerAccountNumber.trim().isEmpty()) {
+                throw new IllegalArgumentException("Customer is required");
+            }
             
-            if (customerAccountNumber == null || itemCodes == null || quantities == null) {
-                request.setAttribute("error", "Please fill all required fields");
-                // Reload data for form
-                doGet(request, response);
-                return;
+            if (itemCodes == null || itemCodes.length == 0) {
+                throw new IllegalArgumentException("At least one item is required");
+            }
+            
+            // Calculate total amount
+            BigDecimal totalAmount = BigDecimal.ZERO;
+            for (int i = 0; i < itemCodes.length; i++) {
+                if (itemCodes[i] != null && !itemCodes[i].trim().isEmpty() &&
+                    quantities[i] != null && !quantities[i].trim().isEmpty() &&
+                    totalPrices[i] != null && !totalPrices[i].trim().isEmpty()) {
+                    
+                    BigDecimal itemTotal = new BigDecimal(totalPrices[i]);
+                    totalAmount = totalAmount.add(itemTotal);
+                }
             }
             
             // Create bill
             Bill bill = new Bill();
             bill.setBillNumber(billDAO.generateBillNumber());
             bill.setCustomerAccountNumber(customerAccountNumber);
+            bill.setBillDate(new Date());
+            bill.setBillDate(new Date());
+            bill.setTotalAmount(totalAmount);
             bill.setStatus("pending");
             bill.setCreatedBy(user.getUsername());
-            
-            // Calculate total and add items
-            double totalAmount = 0;
-            List<BillItem> billItems = new ArrayList<>();
-            
-            for (int i = 0; i < itemCodes.length; i++) {
-                if (itemCodes[i] != null && !itemCodes[i].trim().isEmpty()) {
-                    String itemCode = itemCodes[i].trim();
-                    int quantity = Integer.parseInt(quantities[i]);
-                    
-                    // Get item details
-                    Item item = itemDAO.getItemByCode(itemCode);
-                    if (item != null && item.getStock() >= quantity) {
-                        BillItem billItem = new BillItem(itemCode, quantity, item.getPrice());
-                        billItems.add(billItem);
-                        totalAmount += billItem.getTotalPrice();
-                    }
-                }
-            }
-            
-            bill.setTotalAmount(totalAmount);
+            bill.setCreatedDate(new Date());
             
             // Save bill to database
-            if (billDAO.createBill(bill)) {
-                // Save bill items
-                for (BillItem billItem : billItems) {
-                    billItem.setBillId(bill.getBillId());
-                    billItemDAO.addBillItem(billItem);
+            int billId = billDAO.createBill(bill);
+            
+            if (billId > 0) {
+                // Create bill items
+                for (int i = 0; i < itemCodes.length; i++) {
+                    if (itemCodes[i] != null && !itemCodes[i].trim().isEmpty() &&
+                        quantities[i] != null && !quantities[i].trim().isEmpty() &&
+                        unitPrices[i] != null && !unitPrices[i].trim().isEmpty() &&
+                        totalPrices[i] != null && !totalPrices[i].trim().isEmpty()) {
+                        
+                        BillItem billItem = new BillItem();
+                        billItem.setBillId(billId);
+                        billItem.setItemCode(itemCodes[i]);
+                        billItem.setQuantity(Integer.parseInt(quantities[i]));
+                        billItem.setUnitPrice(new BigDecimal(unitPrices[i]));
+                        billItem.setTotalPrice(new BigDecimal(totalPrices[i]));
+                        
+                        billItemDAO.createBillItem(billItem);
+                    }
                 }
                 
-                // Redirect to bill view
-                response.sendRedirect(request.getContextPath() + "/billing/view?billId=" + bill.getBillId());
+                // Set success message and redirect to print page
+                session.setAttribute("success", "Bill created successfully! Bill Number: " + bill.getBillNumber());
+                response.sendRedirect(request.getContextPath() + "/billing/print?billId=" + billId);
+                
             } else {
-                request.setAttribute("error", "Failed to create bill. Please try again.");
-                // Reload data for form
-                doGet(request, response);
+                throw new Exception("Failed to create bill");
             }
             
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("error", "An error occurred while creating the bill: " + e.getMessage());
-            // Reload data for form
-            doGet(request, response);
+            request.setAttribute("error", "Error creating bill: " + e.getMessage());
+            
+            // Reload form data
+            try {
+                List<Customer> customers = customerDAO.getAllCustomers();
+                List<Item> items = itemDAO.getAllItems();
+                
+                request.setAttribute("customers", customers);
+                request.setAttribute("items", items);
+                
+                // Preserve form data
+                request.setAttribute("customerAccountNumber", customerAccountNumber);
+                request.setAttribute("itemCodes", itemCodes);
+                request.setAttribute("quantities", quantities);
+                request.setAttribute("unitPrices", unitPrices);
+                request.setAttribute("totalPrices", totalPrices);
+                
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            request.getRequestDispatcher("/billing/create.jsp").forward(request, response);
         }
     }
-} 
+}

@@ -1,13 +1,13 @@
 # PahanaEdu Bookshop Management System
 
-A Java web application for managing a bookshop with customer, item, and billing management features.
+A Java web application for managing a bookshop with customer and item management features.
 
 ## Features
 
 - User authentication and authorization
 - Customer management (add, edit, delete, list)
 - Item management (add, edit, delete, list)
-- Billing system
+
 - Responsive web interface
 
 ## Prerequisites

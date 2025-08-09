@@ -8,4 +8,5 @@ public interface CustomerDAO {
     List<Customer> getAllCustomers();
     boolean deleteCustomer(String accountNumber);
     boolean updateCustomer(Customer customer);
+    Customer getCustomerByAccountNumber(String accountNumber);
 } 

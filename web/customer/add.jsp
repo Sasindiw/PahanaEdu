@@ -155,14 +155,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/create">
-                        <i class="fas fa-receipt"></i> Create Bill
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/billing/list">
-                        <i class="fas fa-list"></i> Bills
-                    </a>
+                    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/report/sales">

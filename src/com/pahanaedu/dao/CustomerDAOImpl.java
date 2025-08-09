@@ -78,4 +78,25 @@ public class CustomerDAOImpl implements CustomerDAO {
             return false;
         }
     }
+
+    @Override
+    public Customer getCustomerByAccountNumber(String accountNumber) {
+        String sql = "SELECT * FROM customers WHERE account_number = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, accountNumber);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                Customer customer = new Customer();
+                customer.setAccountNumber(rs.getString("account_number"));
+                customer.setName(rs.getString("name"));
+                customer.setAddress(rs.getString("address"));
+                customer.setTelephone(rs.getString("telephone"));
+                return customer;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 } 
