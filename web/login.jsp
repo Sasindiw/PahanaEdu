@@ -274,7 +274,7 @@
                 <label><input type="checkbox" name="remember" tabindex="0"> Remember me</label>
                 <a href="#" tabindex="0">Forgot password?</a>
             </div>
-            <button type="submit" aria-label="Login">
+            <button type="submit" id="loginButton" aria-label="Login"> <!-- Added id="loginButton" -->
                 Login
                 <span class="spinner" id="spinner"></span>
             </button>
