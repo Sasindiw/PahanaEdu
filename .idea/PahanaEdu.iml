@@ -42,6 +42,7 @@
     <orderEntry type="library" name="javax.servlet-api-4.0.1" level="project" />
     <orderEntry type="library" name="postgresql-42.7.3" level="project" />
     <orderEntry type="library" name="selenium-java-4.35.0" level="project" />
+
     <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
@@ -68,5 +69,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+
   </component>
 </module>
