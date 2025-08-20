@@ -167,6 +167,22 @@
         }
     </style>
 </head>
+
+
+<%-- Show login success alert if loginSuccess parameter is present --%>
+<%
+    String loginSuccess = request.getParameter("loginSuccess");
+    if ("true".equals(loginSuccess)) {
+%>
+<script>
+    alert("Login successful! Welcome, <%= ((com.pahanaedu.model.User)session.getAttribute("user")).getFullName() %>!");
+</script>
+<%
+    }
+%>
+
+
+
 <body>
     <!-- Sidebar -->
     <div class="sidebar">

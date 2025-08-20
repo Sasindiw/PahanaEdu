@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -237,6 +237,20 @@
         }
     </style>
 </head>
+
+<%-- Show logout alert if logout parameter is present --%>
+<%
+    String logout = request.getParameter("logout");
+    if ("true".equals(logout)) {
+%>
+<script>
+    alert("You have successfully logged out.");
+</script>
+<%
+    }
+%>
+
+
 <body>
     <div class="login-container" aria-label="Login form">
         <div class="login-logo" aria-hidden="true"><i class="fa fa-book-open"></i></div>
@@ -260,7 +274,7 @@
                 <label><input type="checkbox" name="remember" tabindex="0"> Remember me</label>
                 <a href="#" tabindex="0">Forgot password?</a>
             </div>
-            <button type="submit" aria-label="Login">
+            <button type="submit" id="loginButton" aria-label="Login"> <!-- Added id="loginButton" -->
                 Login
                 <span class="spinner" id="spinner"></span>
             </button>
