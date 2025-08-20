@@ -7,6 +7,7 @@ import java.sql.*;
 public class UserDAOImpl implements UserDAO {
     @Override
     public User getUserByUsername(String username) {
+        System.out.println("UserDAOImpl.getUserByUsername - Searching for username: " + username);
         User user = null;
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ?")) {
@@ -20,8 +21,12 @@ public class UserDAOImpl implements UserDAO {
                 user.setFullName(rs.getString("full_name"));
                 user.setEmail(rs.getString("email"));
                 user.setRole(rs.getString("role"));
+                System.out.println("User found in database: " + user.getUsername());
+            } else {
+                System.out.println("No user found in database for username: " + username);
             }
         } catch (SQLException e) {
+            System.out.println("SQL Exception in getUserByUsername: " + e.getMessage());
             e.printStackTrace();
         }
         return user;

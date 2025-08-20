@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="PahanaEdu">
+    <output-path>$PROJECT_DIR$/out/artifacts/PahanaEdu</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="PahanaEdu" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/javax.servlet-api-4.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/postgresql-42.7.3.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="PahanaEdu/web/Web" />
+    </root>
+  </artifact>
+</component> 
